@@ -1,0 +1,28 @@
+{%block body %}
+{% if session['logged_in']%}
+<p align="Center">
+	Already Logged IN
+	<form action="/">
+		<p align="Center"><input type="submit" value="Proceed"></p>
+	</form>
+</p>
+{% else %}
+<form action="/register" method="POST"x>
+	<p align="center">
+	   		<input type="text" name="name" placeholder="Enter Your Name">
+	</p>
+	<p align="center">
+	   		<input type="username" name="username" placeholder="Username">
+	</p>
+	<p align="Center">
+	   	<input type="password" name="password" placeholder="Password">
+	</p>
+	<p align="Center">
+	   	<input type="number" name="Phnbr" placeholder="Phone Number">
+	</p>
+	<p align="center">
+       	<input type="submit" value="Register">
+	</p>
+</form>
+{% endif%}
+{%endblock%}

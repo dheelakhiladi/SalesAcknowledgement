@@ -1,0 +1,30 @@
+{%block body %}
+{% if session['AdminLoggedIn']%}
+<p align="Center">
+	Welcome Admin 
+	<form action="/downloadcsv" method="POST">
+		<p align="center">
+	   		<input type="date" name="fromdate" placeholder="From Date">
+	</p>
+	<p align="Center">
+	   	<input type="date" name="todate" placeholder="To Date">
+	</p>
+		<p align="Center"><input type="submit" value="Download data"></p>
+	</form>
+	<p>
+		<form action="/logout">
+			<p align="center">
+				<input type="submit" name="logout" value="Log Out">
+			</p>
+		</form>
+	</p>
+</p>
+{% else %}
+<p>
+	Not Logged In as Admin
+	<form action="/">
+		<p align="Center"><input type="submit" value="Log In"></p>
+	</form>
+</p>
+{% endif%}
+{%endblock%} 

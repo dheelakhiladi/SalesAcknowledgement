@@ -1,0 +1,22 @@
+{%block body %}
+{% if session['AdminLoggedIn']%}
+<p align="Center">
+	Already Logged IN 
+	<form action="/">
+		<p align="Center"><input type="submit" value="Proceed"></p>
+	</form>
+</p>
+{% else %}
+
+<form action="/admincheck" method="POST">
+	<p align="center">
+	   		<input type="username" name="username" placeholder="Username">
+	</p>
+	<p align="Center">
+	   	<input type="password" name="password" placeholder="Password">
+	</p>
+    <p align="center">
+       	<input type="submit" value="log in">
+	</p>
+{% endif%}
+{%endblock%}   

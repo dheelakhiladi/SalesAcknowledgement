@@ -1,0 +1,38 @@
+{%block body %}
+{% if session['logged_in']%}
+<p align="center">
+<form action="/sendOTP" method="POST">
+	<p align="center">
+	   		<input type="number" name="InvoiceNbr" placeholder="Invoice Number">
+	</p>
+	<p align="center">
+	   		<input type="date" name="DOI" placeholder="date of Invoice">
+	</p>
+	<p align="Center">
+	   	<input type="number" name="DelPh" placeholder="Your Phone Number">
+	</p>
+	<p align="Center">
+	   	<input type="text" name="RecName" placeholder="Receipient's Name">
+	</p>
+	<p align="Center">
+	   	<input type="number" name="RecPh" placeholder="Receipient Phone Number">
+	</p>
+    <p align="center">
+       	<input type="submit" value="Send OTP">
+	</p>
+</form>
+<form action="/logout">
+		<p align="center">
+			<input type="submit" name="logout" value="Log Out">
+		</p>
+</form>
+</p>
+{% else %}
+<p align="Center">
+	Not Logged In As Delivery Personel
+	<form action="/">
+		<p align="Center"><input type="submit" value="LogIn"></p>
+	</form>
+</p>
+{% endif%}
+{%endblock%}
